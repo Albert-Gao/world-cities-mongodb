@@ -1,4 +1,5 @@
 from settings import COUNTRY_FIELDS_BLACKLIST
+from data.CurrencySymbols import CURRENCY_SYMBOLS
 from utils.util import remove_field_from_blacklist
 
 COUNTRY_FIELDS = {
@@ -42,6 +43,7 @@ class Country(object):
         self.tld = data[COUNTRY_FIELDS['tld']]
         self.currency_code = data[COUNTRY_FIELDS['Currency_Code']]
         self.currency_name = data[COUNTRY_FIELDS['Currency_Name']]
+        self.currency_symbol = self.get_currency_symbol()
         self.phone = data[COUNTRY_FIELDS['Phone']]
         self.postal_code_format = data[COUNTRY_FIELDS['Postal_Code_Format']]
         self.postal_code_regex = data[COUNTRY_FIELDS['Postal_Code_Regex']]
@@ -49,6 +51,15 @@ class Country(object):
         self.geo_name_id = int(data[COUNTRY_FIELDS['geo_name_id']])
         self.neighbours = data[COUNTRY_FIELDS['neighbours']].split(',')
         self.equivalent_fips_code = data[COUNTRY_FIELDS['Equivalent_Fips_Code']]
+
+    def get_currency_symbol(self):
+        if not self.currency_code:
+            return ''
+
+        if self.currency_code in CURRENCY_SYMBOLS.keys():
+            return CURRENCY_SYMBOLS[self.currency_code]
+        else:
+            return ''
 
     def to_dict(self):
         return remove_field_from_blacklist(COUNTRY_FIELDS_BLACKLIST, self.__dict__)
