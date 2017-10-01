@@ -1,6 +1,10 @@
 # world-cities-database
 
-The data is from [GeoNames](http://www.geonames.org/). It will save 2 collections to your mongodb, one is the cities and one is the countries. Very easy to use and easy to update.
+ The app will save 2 collections to your mongodb: 
+ 1. `cities`(**23328** in total)
+ 1. `countries`(**252** in total)
+
+ Easy to use and easy to update. Everything happens in seconds.
 
 ## Python version
 
@@ -21,18 +25,22 @@ The data is from [GeoNames](http://www.geonames.org/). It will save 2 collection
 
 ## Structure
 
--- `[data]`: [Folder] Raw data from GeoNames
--- `[models]`: [Folder] database model for city and country
--- `[utils]`: [Folder] Helper function
--- `settings.py`: Settings
--- `main.py`: Main file
+- `[data]`: [Folder] Raw data from GeoNames
+- `[models]`: [Folder] database model for city and country
+- `[utils]`: [Folder] Helper function
+- `settings.py`: Settings
+- `main.py`: Main file
 
 ## About the data
-The `cities` contains cities which population greater than 15000.
+- The data is from [GeoNames](http://www.geonames.org/).
 
-To update the data, you just need to download them from GeoNames:
-- [cities15000.zip](http://download.geonames.org/export/dump/cities15000.zip)
-- [countryInfo.txt](http://download.geonames.org/export/dump/countryInfo.txt)
+- The `cities` contains cities which population greater than 15000.
+
+- To update the data, you just need to download them from GeoNames:
+  - [cities15000.zip](http://download.geonames.org/export/dump/cities15000.zip)
+  - [countryInfo.txt](http://download.geonames.org/export/dump/countryInfo.txt)
+
+- The foreign key to refer is `geo_name_id`
 
 And update the according file in `data` folder.
 
