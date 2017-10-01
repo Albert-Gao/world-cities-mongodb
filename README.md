@@ -8,7 +8,7 @@ Do you want a database which contains most of cities in the world as well as the
 ## Why use
 
  - Language agnostic since it's not a lib. Consume the result database using any language you like.
- - No other 3rd party libs but `pymongo`
+ - No other 3rd party libs dependencies but official `pymongo`
  - `python main.py` to generate the database from source data
  - `python update.py` to update the source data from GeoNames
  - Remove any fields you don't need in `settings.py`
