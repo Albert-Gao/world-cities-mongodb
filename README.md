@@ -36,16 +36,20 @@
 
 - The `cities` contains cities which population greater than 15000.
 
+- The foreign key to refer is `geo_name_id`
+
 - To update the data, you just need to download them from GeoNames:
   - [cities15000.zip](http://download.geonames.org/export/dump/cities15000.zip)
   - [countryInfo.txt](http://download.geonames.org/export/dump/countryInfo.txt)
+  - And update the according file in `data` folder.
 
-- The foreign key to refer is `geo_name_id`
 
-And update the according file in `data` folder.
+## FAQ
 
-## Tips
+### What will happen if I run the app twice
 
-1. Every execution will drop the previous collection and generate new one.
+- Every execution will drop the previous collection and generate new one.
 
-2. How about support other database? I think it could, you just need to refactor the `save_cities()` and `save_countries()` in `mongodb.py`, then it will be called at run time with the list of data to insert.
+### How about support other database
+
+- I think it's very easy, you just need to refactor the `save_cities()` and `save_countries()` in `mongodb.py`, then it will be called at run time with the list of data to insert.
