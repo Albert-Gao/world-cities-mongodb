@@ -5,6 +5,8 @@ Do you want a database which contains most of cities in the world as well as the
  1. `cities`(**23328** in total)
  1. `countries`(**252** in total)
 
+## Why use
+
  - No other 3rd party libs but `pymongo`
  - `python main.py` to generate the database from source data
  - `python update.py` to update the source data from GeoNames
