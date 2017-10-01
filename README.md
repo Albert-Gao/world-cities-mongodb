@@ -1,12 +1,15 @@
 # world-cities-database
 
- The app will save 2 collections to your mongodb: 
+Do you want a database which contains most of cities in the world as well as the countries? This app will save 2 collections to your mongodb:
+
  1. `cities`(**23328** in total)
  1. `countries`(**252** in total)
 
  - No other 3rd party libs but `pymongo`
- - One command to generate the database
- - One command to update the source data
+ - `python main.py` to generate the database from source data
+ - `python update.py` to update the source data from GeoNames
+ - Remove any fields you don't need in `settings.py`
+ - Easy to add support for other database. See `FAQ` part.
 
 ## Python version
 
@@ -27,7 +30,7 @@
 
 - To update the source data in `data` folder: **`python update.py`**
 
-## Structure
+## Folder Structure
 
 - `[data]`: [Folder] Raw data from GeoNames
 - `[models]`: [Folder] database model for city and country
@@ -37,6 +40,7 @@
 - `update.py`: Update the source `data` from GeoNames
 
 ## About the data
+
 - The data is from [GeoNames](http://www.geonames.org/).
 
 - The `cities` contains cities which population greater than 15000.
@@ -50,7 +54,6 @@
   - [cities15000.zip](http://download.geonames.org/export/dump/cities15000.zip)
   - [countryInfo.txt](http://download.geonames.org/export/dump/countryInfo.txt)
 
-
 ## FAQ
 
 ### What will happen if I run the app twice
@@ -59,4 +62,4 @@
 
 ### How about support other database
 
-- I think it's very easy, you just need to refactor the `save_cities()` and `save_countries()` in `mongodb.py`, then it will be called at run time with the list of data to insert.
+- It's very easy, you just need to refactor the `save_cities()` and `save_countries()` in `mongodb.py`, then it will be called at run time with the list of data to insert.
