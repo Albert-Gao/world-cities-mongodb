@@ -14,6 +14,7 @@ Do you want a database which contains most of cities in the world as well as the
  - Remove any fields you don't need in `settings.py`
  - Support `currency symbol` which not included in the GeoNames (like `$` for `USD`)
  - Easy to add support for other database. See `FAQ` part.
+ - Could add "duplicate" data to prevent join query (see `settings.py`)
 
 ## Python version
 
