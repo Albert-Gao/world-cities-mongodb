@@ -11,6 +11,7 @@ Do you want a database which contains most of cities in the world as well as the
  - `python main.py` to generate the database from source data
  - `python update.py` to update the source data from GeoNames
  - Remove any fields you don't need in `settings.py`
+ - Support `currency symbol` which not included in the GeoNames (like `$` for `USD`)
  - Easy to add support for other database. See `FAQ` part.
 
 ## Python version
