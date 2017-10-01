@@ -1,3 +1,6 @@
+from settings import COUNTRY_FIELDS_BLACKLIST
+from utils.util import remove_field_from_blacklist
+
 COUNTRY_FIELDS = {
     'ISO': 0, # ISO
     'ISO3': 1, # ISO3
@@ -48,4 +51,4 @@ class Country(object):
         self.equivalent_fips_code = data[COUNTRY_FIELDS['Equivalent_Fips_Code']]
 
     def to_dict(self):
-        return self.__dict__
+        return remove_field_from_blacklist(COUNTRY_FIELDS_BLACKLIST, self.__dict__)

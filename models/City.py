@@ -1,3 +1,6 @@
+from settings import CITY_FIELDS_BLACKLIST
+from utils.util import remove_field_from_blacklist
+
 CITY_FIELDS = {
     'geo_name_id': 0, # integer id of record in geonames database
     'name': 1, # name of geographical point (utf8) varchar(200)
@@ -48,4 +51,4 @@ class City(object):
         self.modification_date = data[CITY_FIELDS['modification_date']]
 
     def to_dict(self):
-        return self.__dict__
+        return remove_field_from_blacklist(CITY_FIELDS_BLACKLIST, self.__dict__)

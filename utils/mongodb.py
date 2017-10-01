@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import settings
 
-MONGO_CLIENT = MongoClient(settings.HOST, settings.PORT)
+MONGO_CLIENT = MongoClient(settings.MONGO_HOST, settings.MONGO_PORT)
 DB = MONGO_CLIENT[settings.DB_NAME]
 CITY_COLLECTION = DB[settings.CITY_COLLECTION_NAME]
 COUNTRY_COLLECTION = DB[settings.COUNTRY_COLLECTION_NAME]
