@@ -4,7 +4,9 @@
  1. `cities`(**23328** in total)
  1. `countries`(**252** in total)
 
- Easy to use and easy to update. Everything happens in seconds.
+ - No other 3rd party libs but `pymongo`
+ - One command to generate the database
+ - One command to update the source data
 
 ## Python version
 
@@ -23,13 +25,16 @@
 
 1. Enjoy :)
 
+- To update the source data in `data` folder: **`python update.py`**
+
 ## Structure
 
 - `[data]`: [Folder] Raw data from GeoNames
 - `[models]`: [Folder] database model for city and country
 - `[utils]`: [Folder] Helper function
 - `settings.py`: Settings
-- `main.py`: Main file
+- `main.py`: Main file to generate the database
+- `update.py`: Update the source `data` from GeoNames
 
 ## About the data
 - The data is from [GeoNames](http://www.geonames.org/).
@@ -38,10 +43,12 @@
 
 - The foreign key to refer is `geo_name_id`
 
-- To update the data, you just need to download them from GeoNames:
+- How to update the data
+  - **`python update.py`**
+
+- The URL of source data from GeoNames:
   - [cities15000.zip](http://download.geonames.org/export/dump/cities15000.zip)
   - [countryInfo.txt](http://download.geonames.org/export/dump/countryInfo.txt)
-  - And update the according file in `data` folder.
 
 
 ## FAQ
