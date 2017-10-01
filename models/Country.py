@@ -29,12 +29,12 @@ class Country(object):
 
         self.iso = data[COUNTRY_FIELDS['ISO']]
         self.iso3 = data[COUNTRY_FIELDS['ISO3']]
-        self.iso_numeric = data[COUNTRY_FIELDS['ISO_Numeric']]
+        self.iso_numeric = int(data[COUNTRY_FIELDS['ISO_Numeric']])
         self.fips = data[COUNTRY_FIELDS['fips']]
         self.country = data[COUNTRY_FIELDS['Country']]
         self.capital = data[COUNTRY_FIELDS['Capital']]
         self.area = data[COUNTRY_FIELDS['Area']]
-        self.population = data[COUNTRY_FIELDS['Population']]
+        self.population = int(data[COUNTRY_FIELDS['Population']])
         self.continent = data[COUNTRY_FIELDS['Continent']]
         self.tld = data[COUNTRY_FIELDS['tld']]
         self.currency_code = data[COUNTRY_FIELDS['Currency_Code']]
@@ -42,9 +42,9 @@ class Country(object):
         self.phone = data[COUNTRY_FIELDS['Phone']]
         self.postal_code_format = data[COUNTRY_FIELDS['Postal_Code_Format']]
         self.postal_code_regex = data[COUNTRY_FIELDS['Postal_Code_Regex']]
-        self.languages = data[COUNTRY_FIELDS['Languages']]
-        self.geo_name_id = data[COUNTRY_FIELDS['geo_name_id']]
-        self.neighbours = data[COUNTRY_FIELDS['neighbours']]
+        self.languages = data[COUNTRY_FIELDS['Languages']].split(',')
+        self.geo_name_id = int(data[COUNTRY_FIELDS['geo_name_id']])
+        self.neighbours = data[COUNTRY_FIELDS['neighbours']].split(',')
         self.equivalent_fips_code = data[COUNTRY_FIELDS['Equivalent_Fips_Code']]
 
     def to_dict(self):

@@ -27,7 +27,7 @@ class City(object):
         if not isinstance(data, list):
             raise ValueError("Expect data to be a list")
 
-        self.geo_name_id = data[CITY_FIELDS['geo_name_id']]
+        self.geo_name_id = int(data[CITY_FIELDS['geo_name_id']])
         self.name = data[CITY_FIELDS['name']]
         self.ascii_name = data[CITY_FIELDS['ascii_name']]
         self.alternate_names = data[CITY_FIELDS['alternate_names']].split(',')
@@ -41,7 +41,7 @@ class City(object):
         self.admin2_code = data[CITY_FIELDS['admin2_code']]
         self.admin3_code = data[CITY_FIELDS['admin3_code']]
         self.admin4_code = data[CITY_FIELDS['admin4_code']]
-        self.population = data[CITY_FIELDS['population']]
+        self.population = int(data[CITY_FIELDS['population']])
         self.elevation = data[CITY_FIELDS['elevation']]
         self.dem = data[CITY_FIELDS['dem']]
         self.timezone = data[CITY_FIELDS['timezone']]
