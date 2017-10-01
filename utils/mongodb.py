@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+from utils.parser import cities, countires, cities_dict, countries_dict
 import settings
 
 MONGO_CLIENT = MongoClient(settings.MONGO_HOST, settings.MONGO_PORT)
@@ -10,11 +11,43 @@ def init():
     CITY_COLLECTION.drop()
     COUNTRY_COLLECTION.drop()
 
-def save_cities(data):
-    save_to_db(CITY_COLLECTION, data)
+#################
+#  Save cities  #
+#################
 
-def save_countries(data):
-    save_to_db(COUNTRY_COLLECTION, data)
+def add_extra_country_fields():
+    if not settings.ADD_COUNTRY_TO_CITY:
+        return
+
+    for city in cities:
+        according_country = countries_dict[city['country_code']]
+        attrs_to_add = {
+            'geo_name_id': according_country.geo_name_id
+        }
+        for attr in settings.COUNTRY_FIELDS_TO_ADD:
+            attrs_to_add[attr] = getattr(according_country, attr)
+
+        city['country'] = attrs_to_add
+
+def save_cities():
+    add_extra_country_fields()
+    save_to_db(CITY_COLLECTION, cities)
+
+def add_extra_cities_fields():
+    if not settings.ADD_CITY_TO_COUNTRY:
+        return
+    
+    for country in countires:
+        if country['iso'] in cities_dict:
+            country['cities'] = cities_dict[country['iso']]
+
+####################
+#  Save countries  #
+####################
+
+def save_countries():
+    add_extra_cities_fields()
+    save_to_db(COUNTRY_COLLECTION, countires)
 
 def save_to_db(mongo_collection, data):
     if not isinstance(data, list):
