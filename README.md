@@ -1,4 +1,4 @@
-# world-cities-database
+# world-cities-mongodb
 
 Do you want a database which contains most of cities in the world as well as the countries? This app will save 2 collections to your mongodb:
 
