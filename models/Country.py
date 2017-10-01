@@ -1,0 +1,51 @@
+COUNTRY_FIELDS = {
+    'ISO': 0, # ISO
+    'ISO3': 1, # ISO3
+    'ISO_Numeric': 2, # ISO-Numeric
+    'fips': 3, # fips
+    'Country' : 4, # Country
+    'Capital': 5, # Capital
+    'Area': 6, 	# Area(in sq km)
+    'Population': 7, # Population
+    'Continent': 8, # Continent
+    'tld': 9, # tld
+    'Currency_Code': 10, # CurrencyCode
+    'Currency_Name': 11, # CurrencyName
+    'Phone': 12, # Phone
+    'Postal_Code_Format': 13, # Postal Code Format
+    'Postal_Code_Regex': 14, # Postal Code Regex
+    'Languages': 15, # Languages
+    'geo_name_id': 16, # geonameid
+    'neighbours': 17, # neighbours
+    'Equivalent_Fips_Code': 18 # EquivalentFipsCode
+}
+
+class Country(object):
+    def __init__(self, data):
+        super(Country, self).__init__()
+
+        if not isinstance(data, list):
+            raise ValueError("Expect data to be a list")
+
+        self.iso = data[COUNTRY_FIELDS['ISO']]
+        self.iso3 = data[COUNTRY_FIELDS['ISO3']]
+        self.iso_numeric = data[COUNTRY_FIELDS['ISO_Numeric']]
+        self.fips = data[COUNTRY_FIELDS['fips']]
+        self.country = data[COUNTRY_FIELDS['Country']]
+        self.capital = data[COUNTRY_FIELDS['Capital']]
+        self.area = data[COUNTRY_FIELDS['Area']]
+        self.population = data[COUNTRY_FIELDS['Population']]
+        self.continent = data[COUNTRY_FIELDS['Continent']]
+        self.tld = data[COUNTRY_FIELDS['tld']]
+        self.currency_code = data[COUNTRY_FIELDS['Currency_Code']]
+        self.currency_name = data[COUNTRY_FIELDS['Currency_Name']]
+        self.phone = data[COUNTRY_FIELDS['Phone']]
+        self.postal_code_format = data[COUNTRY_FIELDS['Postal_Code_Format']]
+        self.postal_code_regex = data[COUNTRY_FIELDS['Postal_Code_Regex']]
+        self.languages = data[COUNTRY_FIELDS['Languages']]
+        self.geo_name_id = data[COUNTRY_FIELDS['geo_name_id']]
+        self.neighbours = data[COUNTRY_FIELDS['neighbours']]
+        self.equivalent_fips_code = data[COUNTRY_FIELDS['Equivalent_Fips_Code']]
+
+    def to_dict(self):
+        return self.__dict__

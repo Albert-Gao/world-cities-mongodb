@@ -1,0 +1,6 @@
+HOST = 'localhost'
+PORT = 27017
+DB_NAME = 'WorldCities'
+
+CITY_COLLECTION_NAME = 'City'
+COUNTRY_COLLECTION_NAME = 'Country'
