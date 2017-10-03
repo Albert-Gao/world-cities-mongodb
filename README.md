@@ -5,16 +5,19 @@ Do you want a database which contains most of cities in the world as well as the
  1. `cities`(**23328** in total)
  1. `countries`(**252** in total)
 
-## Why use
+Even better, the 
 
- - Language agnostic since it's not a lib. Consume the result database using any language you like.
+## Why use it
+
+ - Language agnostic because it's not a lib. Consume the result database using any language you like.
+ - Source data from [GeoNames.org](http://www.geonames.org/) is under active updates. And this app will let you update in few seconds.
  - No other 3rd party libs dependencies but official `pymongo`
  - `python main.py` to generate the database from source data
  - `python update.py` to update the source data from GeoNames
  - Remove any fields you don't need in `settings.py`
  - Support `currency symbol` which not included in the GeoNames (like `$` for `USD`)
  - Easy to add support for other database. See `FAQ` part.
- - Could add "duplicate" data to prevent join query (see `settings.py`)
+ - Could add "duplicate" data to prevent more queries in MongoDB (see `settings.py`)
 
 ## Python version
 
@@ -49,8 +52,6 @@ Do you want a database which contains most of cities in the world as well as the
 - The data is from [GeoNames](http://www.geonames.org/).
 
 - The `cities` contains cities which population greater than 15000.
-
-- The foreign key to refer is `geo_name_id`
 
 - How to update the data
   - **`python update.py`**
