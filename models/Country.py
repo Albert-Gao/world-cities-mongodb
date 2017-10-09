@@ -19,7 +19,7 @@ COUNTRY_FIELDS = {
     'Postal_Code_Format': 13, # Postal Code Format
     'Postal_Code_Regex': 14, # Postal Code Regex
     'Languages': 15, # Languages
-    'geo_name_id': 16, # geonameid
+    'country_id': 16, # geonameid
     'neighbours': 17, # neighbours
     'Equivalent_Fips_Code': 18 # EquivalentFipsCode
 }
@@ -48,7 +48,7 @@ class Country(object):
         self.postal_code_format = data[COUNTRY_FIELDS['Postal_Code_Format']]
         self.postal_code_regex = data[COUNTRY_FIELDS['Postal_Code_Regex']]
         self.languages = data[COUNTRY_FIELDS['Languages']].split(',')
-        self.geo_name_id = int(data[COUNTRY_FIELDS['geo_name_id']])
+        self.country_id = int(data[COUNTRY_FIELDS['country_id']])
         self.neighbours = data[COUNTRY_FIELDS['neighbours']].split(',')
         self.equivalent_fips_code = data[COUNTRY_FIELDS['Equivalent_Fips_Code']]
 

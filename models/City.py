@@ -2,7 +2,7 @@ from settings import CITY_FIELDS_BLACKLIST
 from utils.util import remove_field_from_blacklist
 
 CITY_FIELDS = {
-    'geo_name_id': 0, # integer id of record in geonames database
+    'city_id': 0, # integer id of record in geonames database
     'name': 1, # name of geographical point (utf8) varchar(200)
     'ascii_name': 2, # name of geographical point in plain ascii characters, varchar(200)
     'alternate_names': 3, # alternatenames, comma separated, ascii names automatically transliterated, convenience attribute from alternatename table, varchar(10000)
@@ -30,7 +30,7 @@ class City(object):
         if not isinstance(data, list):
             raise ValueError("Expect data to be a list")
 
-        self.geo_name_id = int(data[CITY_FIELDS['geo_name_id']])
+        self.city_id = int(data[CITY_FIELDS['city_id']])
         self.name = data[CITY_FIELDS['name']]
         self.ascii_name = data[CITY_FIELDS['ascii_name']]
         self.alternate_names = data[CITY_FIELDS['alternate_names']].split(',')
