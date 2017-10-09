@@ -21,7 +21,7 @@ CITY_FIELDS_BLACKLIST = [
     'dem'
 ]
 COUNTRY_FIELDS_BLACKLIST = [
-    'ISO_Numeric',
+    'iso_numeric',
     'fips',
     'area',
     'population',
