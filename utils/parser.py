@@ -20,7 +20,7 @@ cities_dict = {}
 def save_extra_city_fields(city):
     def get_attrs_to_add():
         attrs_to_add = {
-            'geo_name_id': getattr(city, 'geo_name_id')
+            'city_id': getattr(city, 'city_id')
         }
         for attr in settings.CITY_FIELDS_TO_ADD:
             attrs_to_add[attr] = getattr(city, attr)

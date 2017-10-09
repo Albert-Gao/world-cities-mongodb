@@ -22,7 +22,7 @@ def add_extra_country_fields():
     for city in cities:
         according_country = countries_dict[city['country_code']]
         attrs_to_add = {
-            'geo_name_id': according_country.geo_name_id
+            'country_id': according_country.country_id
         }
         for attr in settings.COUNTRY_FIELDS_TO_ADD:
             attrs_to_add[attr] = getattr(according_country, attr)
