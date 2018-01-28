@@ -49,12 +49,12 @@ def parse_city():
 #########################
 #  Parse the countries  #
 #########################
-countires = []
+countries = []
 countries_dict = {}
 
 def parse_country_callback(line):
     country = Country(line)
-    countires.append(country.to_dict())
+    countries.append(country.to_dict())
     if settings.ADD_COUNTRY_TO_CITY:
         countries_dict[country.iso] = country
 

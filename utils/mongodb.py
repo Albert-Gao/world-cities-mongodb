@@ -37,7 +37,7 @@ def add_extra_cities_fields():
     if not settings.ADD_CITY_TO_COUNTRY:
         return
     
-    for country in countires:
+    for country in countries:
         if country['iso'] in cities_dict:
             country['cities'] = cities_dict[country['iso']]
 
@@ -47,7 +47,7 @@ def add_extra_cities_fields():
 
 def save_countries():
     add_extra_cities_fields()
-    save_to_db(COUNTRY_COLLECTION, countires)
+    save_to_db(COUNTRY_COLLECTION, countries)
 
 def save_to_db(mongo_collection, data):
     if not isinstance(data, list):
