@@ -17,6 +17,7 @@ Even better, the
  - Remove any fields you don't need in `settings.py`
  - Support `currency symbol` which not included in the GeoNames (like `$` for `USD`)
  - Easy to add support for other database. See `FAQ` part.
+ - Could filter countries which only speak certain languages. (see `setting.py`)
  - Could add "duplicate" data to prevent more queries in MongoDB (see `settings.py`)
 
 ## Python version
