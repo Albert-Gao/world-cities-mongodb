@@ -83,7 +83,5 @@ def remove_non_match_language_countries_and_cities():
     if not settings.ONLY_LANGUAGE: 
         return
 
-    print(match_language_countries_iso)
-
     cities[:] = [c for c in cities if c['country_code'] in match_language_countries_iso]
     countries[:] = [c for c in countries if c['iso'] in match_language_countries_iso]
