@@ -35,7 +35,6 @@ CITY_FIELDS_BLACKLIST = [
     'latitude',
     'longitude',
     'cc2',
-    'timezone',
     'modification_date'
 ]
 COUNTRY_FIELDS_BLACKLIST = [
