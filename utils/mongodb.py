@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from utils.parser import cities, countires, cities_dict, countries_dict
+from utils.parser import cities, countries, cities_dict, countries_dict
 import settings
 
 MONGO_CLIENT = MongoClient(settings.MONGO_HOST, settings.MONGO_PORT)
