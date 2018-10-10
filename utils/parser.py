@@ -6,7 +6,7 @@ import settings
 
 
 def read_csv_by_line(file_path, callback):
-    with open(file_path) as file_to_parse:
+    with open(file_path, encoding="utf8") as file_to_parse:
         for line in csv.reader(file_to_parse, dialect='excel-tab'):
             if line and not line[0].startswith("#"):
                 callback(line)
